@@ -1,0 +1,92 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100vw;
+  overflow: hidden;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #181c23;
+}
+
+#particles-bg {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at 20% 30%, #8f3ade44 0, #181c2300 70%),
+              radial-gradient(circle at 80% 70%, #4a47ff44 0, #181c2300 70%);
+  animation: bgmove 10s infinite alternate;
+}
+
+@keyframes bgmove {
+  0% { background-position: 20% 30%, 80% 70%; }
+  100% { background-position: 30% 40%, 70% 60%; }
+}
+
+.center-content {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 2;
+}
+
+#main-title {
+  font-size: 3em;
+  color: #fff;
+  margin-bottom: 0.2em;
+  letter-spacing: 2px;
+  text-shadow: 0 4px 32px #b83ade88, 0 1px 0 #000;
+  animation: fadein 1.2s;
+}
+
+#subtitle {
+  color: #e0e0e0;
+  font-size: 1.3em;
+  margin-bottom: 2em;
+  animation: fadein 2s;
+}
+
+@keyframes fadein {
+  from { opacity: 0; transform: translateY(30px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+#accessBtn {
+  font-size: 2em;
+  padding: 1em 2.5em;
+  background: linear-gradient(90deg, #aa3ade 0%, #5947ff 100%);
+  color: #fff;
+  border: none;
+  border-radius: 32px;
+  box-shadow: 0 8px 32px 0 rgba(93, 31, 135, 0.37);
+  cursor: pointer;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+  animation: pulse 1.5s infinite alternate;
+}
+
+#accessBtn:hover {
+  background: linear-gradient(90deg, #6347ff 0%, #b83ade 100%);
+  transform: scale(1.07);
+  box-shadow: 0 12px 40px 0 rgba(85, 31, 135, 0.45);
+}
+
+@keyframes pulse {
+  from { box-shadow: 0 0 32px 0 #a23ade55; }
+  to { box-shadow: 0 0 64px 8px #6347ff55; }
+}
+
+#video {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 10;
+  background: #000;
+}
