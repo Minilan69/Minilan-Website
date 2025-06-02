@@ -4,6 +4,36 @@
   <meta charset="UTF-8">
   <title>Minilan.fr</title>
   <link rel="stylesheet" href="styles.css">
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: black;
+      overflow: hidden;
+      font-family: sans-serif;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    #welcome {
+      text-align: center;
+      z-index: 10;
+    }
+    #video {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: 5;
+      background: black;
+    }
+  </style>
 </head>
 <body>
   <div id="particles-bg"></div>
@@ -12,7 +42,7 @@
     <div id="subtitle">Portfolio minimaliste de Minilan</div>
     <button id="accessBtn">Accéder au site</button>
   </div>
-  <video id="video" loop playsinline>
+  <video id="video" loop playsinline preload="auto">
     <source src="assets/rickroll.mp4" type="video/mp4">
     Ton navigateur ne supporte pas les vidéos HTML5
   </video>
@@ -20,11 +50,26 @@
     const btn = document.getElementById('accessBtn');
     const video = document.getElementById('video');
     const welcome = document.getElementById('welcome');
-    btn.addEventListener('click', () => {
+
+    btn.addEventListener('click', async () => {
       welcome.style.display = 'none';
       video.style.display = 'block';
       video.muted = false;
       video.currentTime = 0;
+      
+      try {
+        // Demande le plein écran (fonctionne sur la plupart des navigateurs)
+        if (video.requestFullscreen) {
+          await video.requestFullscreen();
+        } else if (video.webkitRequestFullscreen) {
+          await video.webkitRequestFullscreen();
+        } else if (video.msRequestFullscreen) {
+          await video.msRequestFullscreen();
+        }
+      } catch(e) {
+        // Si le fullscreen échoue, continue quand même
+      }
+      
       video.play();
     });
   </script>
