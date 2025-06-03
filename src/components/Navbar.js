@@ -13,6 +13,7 @@ import {
   AiOutlineFundProjectionScreen,
   AiOutlineUser,
 } from "react-icons/ai";
+import { PiMusicNotes } from "react-icons/pi";
 
 import { CgFileDocument } from "react-icons/cg";
 
@@ -79,6 +80,16 @@ function NavBar() {
                   style={{ marginBottom: "2px" }}
                 />{" "}
                 Projects
+              </Nav.Link>
+            </Nav.Item>
+
+            <Nav.Item>
+              <Nav.Link
+                as={Link}
+                to="/music"
+                onClick={() => updateExpanded(false)}
+              >
+                <PiMusicNotes  style={{ marginBottom: "2px" }} /> Music
               </Nav.Link>
             </Nav.Item>
 

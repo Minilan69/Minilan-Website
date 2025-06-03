@@ -30,7 +30,7 @@ function AboutCard() {
           </ul>
 
           <p style={{ color: "rgb(155 126 172)" }}>
-            "I’m too lazy to be lazy, so I just do it."
+            "I’m too lazy to be lazy, so I just do it"
           </p>
           <footer className="blockquote-footer">Minilan</footer>
         </blockquote>

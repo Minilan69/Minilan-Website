@@ -741,3 +741,113 @@ button:focus {
 .fork-btn-inner::after {
   display: none !important;
 }
+/* --- Music Section Custom Style --- */
+.music-section-title {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #ff4747;
+  letter-spacing: 2px;
+  margin-bottom: 2.2rem;
+  text-shadow: 0 4px 24px #000a, 0 1px 0 #fff2;
+  background: linear-gradient(90deg, #ff4747 30%, #de3a3a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.music-category-title {
+  font-size: 1.4em;
+  color: #ffffff;
+  margin-bottom: 1.2rem;
+  letter-spacing: 1px;
+  font-weight: 700;
+  padding-left: 14px;
+  border-left: 4px solid #ff4747;
+  background: none;
+  border-radius: 0;
+  display: inline-block;
+  transition: color 0.2s, border-color 0.2s;
+  text-shadow: 0 2px 12px #0008;
+}
+
+.music-category-title:hover {
+  color: #fff;
+  border-left: 4px solid #fff;
+}
+
+.music-card {
+  background: linear-gradient(135deg, #2e1a1a 60%, #4b2323 100%) !important;
+  border: none !important;
+  border-radius: 22px !important;
+  box-shadow: 0 6px 32px 0 rgba(222, 58, 58, 0.1), 0 1.5px 8px 0 #000a !important;
+  transition: transform 0.18s, box-shadow 0.18s;
+  overflow: hidden;
+  min-height: 370px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.music-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 12px 40px 0 #ff474744, 0 2px 16px 0 #000c !important;
+}
+
+.music-card .card-title {
+  color: #ff4747;
+  font-weight: bold;
+  font-size: 1.1em;
+  margin-bottom: 0.7em;
+  text-align: center;
+  letter-spacing: 1px;
+  text-shadow: 0 1px 8px #0008;
+}
+
+.music-card > .card-body {
+  padding: 0 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.music-card iframe {
+  margin: 18px !important; /* même espace partout */
+  display: block;
+  border-radius: 14px;
+  border: none;
+  box-shadow: 0 2px 12px 0 #0005;
+  transition: box-shadow 0.2s, filter 0.2s;
+  width: 100%;
+  min-height: 300px;
+  filter: grayscale(10%) brightness(0.98);
+}
+
+.music-card:hover iframe {
+  box-shadow: 0 4px 24px 0 #ff474755;
+  filter: grayscale(0%) brightness(1.05);
+}
+
+@media (max-width: 991px) {
+  .music-card {
+    min-height: 340px;
+  }
+  .music-card iframe {
+    min-height: 220px;
+  }
+}
+
+@media (max-width: 767px) {
+  .music-section-title {
+    font-size: 1.3em;
+  }
+  .music-category-title {
+    font-size: 1.1em;
+  }
+  .music-card {
+    min-height: 220px;
+    padding: 0.5em 0.2em;
+  }
+  .music-card iframe {
+    min-height: 120px;
+  }
+}
