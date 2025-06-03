@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
 import Particle from "../Particle";
+import LazyIframe from "../LazyIframe";
 
 const musicCategories = [
     {
@@ -261,16 +262,10 @@ function Music() {
                 <Col md={6} lg={4} className="mb-4" key={track.title + tIdx}>
                   <Card className="music-card">
                     <Card.Body>
-                      <iframe
+                      <LazyIframe
                         title={track.title}
                         src={track.src}
-                        width="100%"
-                        height="300"
-                        frameBorder="0"
-                        allowTransparency="true"
-                        allow="encrypted-media; clipboard-write"
-                        style={{ borderRadius: "14px", border: "none" }}
-                      ></iframe>
+                      />
                     </Card.Body>
                   </Card>
                 </Col>
