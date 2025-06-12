@@ -2,12 +2,13 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import myImg from "../../Assets/avatar.svg";
 import Tilt from "react-parallax-tilt";
+import ProjectCard from "../Projects/ProjectCards"; // Ajouté
+import image from "../../Assets/Projects/minilan.png"; // Mets ici l'image de ton projet
 import {
   AiFillGithub,
   AiOutlineTwitter,
   AiFillInstagram,
 } from "react-icons/ai";
-import { FaLinkedinIn } from "react-icons/fa";
 
 function Home2() {
   return (
@@ -41,6 +42,25 @@ function Home2() {
             <Tilt>
               <img src={myImg} className="img-fluid" alt="avatar" />
             </Tilt>
+          </Col>
+        </Row>
+        <Row>
+          <Col md={12} className="home-latest-project" style={{ marginTop: "30px", marginBottom: "30px" }}>
+            <h2>
+              <span className="purple">Last Project</span>
+            </h2>
+            <Row style={{ justifyContent: "center" }}>
+              <Col md={8} lg={6}>
+                <ProjectCard
+                  imgPath={image}
+                  isBlog={false}
+                  title="Minilan's Website"
+                  description="Personal website showcasing my projects, skills, and portfolio. Built with React and styled for a clean, modern look"
+                  ghLink="https://github.com/Minilan69/Minilan-Website"
+                  demoLink="https://minilan.fr/"
+                />
+              </Col>
+            </Row>
           </Col>
         </Row>
         <Row>
